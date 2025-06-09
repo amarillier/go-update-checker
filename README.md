@@ -18,7 +18,7 @@ $ go get github.com/amarillier/go-update-checker
 import (
     "fmt"
 
-    updatechecker "github.com/Christian1984/go-update-checker"
+    updatechecker "github.com/amarillier/go-update-checker"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
     uc.PrintMessage()
     /*
     =============================================================
-    === INFO: A new update is available for Go Update Checker ===
+    === A new update is available for Go Update Checker ===
 
     Version: 0.0.2
 
@@ -38,7 +38,7 @@ func main() {
 
 
     Download the latest version here:
-    https://github.com/Christian1984/go-update-checker/releases
+    https://github.com/amarillier/go-update-checker/releases
     =============================================================
     */
 
@@ -46,7 +46,7 @@ func main() {
     uc.PrintMessage()
     /*
     ========================================================================
-    === INFO: You are running the latest version of Go Update Checker ===
+    === You are running the latest version of Go Update Checker ===
     ========================================================================
     */
 
