@@ -15,6 +15,8 @@ import (
 const Filename string = "latestcheck.json"
 const DateFormat string = time.UnixDate
 
+var cVersion string
+
 type CheckData struct {
 	Timestamp   string `json:"timestamp"`
 	Version     string `json:"version"`
@@ -169,11 +171,13 @@ func (uc *updateChecker) updateAvailableMessage(checkData CheckData) string {
 	return bars + "\n" +
 		s + "\n" +
 		bars + "\n" +
+		// "\n" +
+		"Your Version: v" + cVersion + "\n" +
 		"\n" +
-		"Version: " + checkData.Version + "\n" +
-		"\n" +
+		"New Version: " + checkData.Version + "\n" +
+		// "\n" +
 		"Title: " + checkData.Name + "\n" +
-		"\n" +
+		// "\n" +
 		"Description:\n" +
 		checkData.Description + "\n" +
 		"\n" +
@@ -221,6 +225,7 @@ func (uc *updateChecker) isCurrentVersionOutdated(currentVersion string, availab
 
 func (uc *updateChecker) CheckForUpdate(currentVersion string) {
 	latestCheck, fileErr := uc.loadFile()
+	cVersion = currentVersion
 	if fileErr != nil {
 		//return false
 	}
