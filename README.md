@@ -24,7 +24,8 @@ Again, this is a fork of the original by Chris with some minor updates to suit m
 https://github.com/Christian1984/go-update-checker
 
 
-#### Update Check Example1
+# Example usage
+## Update Check Example1
 
 ```go
 import (
@@ -50,7 +51,7 @@ func main() {
 }
 ```
 
-#### Example output 1
+### Example output 1
 ```Checking for 0.0.1
 =======================================================
 === A new update is available for Go Update Checker ===
@@ -73,7 +74,7 @@ Update available:  true
 https://github.com/amarillier/go-update-checker/releases
 ```
 
-#### Update Check Example2
+## Update Check Example2
 
 ```go
 import (
@@ -99,7 +100,7 @@ func main() {
 }
 ```
 
-#### Example output 2
+### Example output 2
 ```
 Checking for 0.0.3
 ===============================================================
@@ -110,7 +111,7 @@ Update available:  false
 https://github.com/amarillier/go-update-checker/releases
 ```
 
-#### Update Check Example3
+## Update Check Example3
 
 ```go
 import (
@@ -136,7 +137,7 @@ func main() {
 }
 ```
 
-#### Example output 3
+### Example output 3
 ```
 Checking for 9.0.3
 ==================================================================
