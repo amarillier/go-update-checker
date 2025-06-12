@@ -257,7 +257,43 @@ func (uc *updateChecker) CheckForUpdate(currentVersion string) {
 	if uc.isCurrentVersionOutdated(currentVersion, latestCheck.Version) {
 		uc.Message = uc.updateAvailableMessage(latestCheck)
 		uc.UpdateAvailable = true
+	} else if uc.isCurrentVersionNewer(currentVersion, latestCheck.Version) {
+		uc.Message = uc.newerVersionMessage(latestCheck)
+		uc.UpdateAvailable = false
 	} else {
 		uc.Message = uc.noUpdateAvailableMessage(latestCheck)
 	}
+}
+
+func (uc *updateChecker) newerVersionMessage(checkData CheckData) string {
+	s := "=== You are running a newer version of " + uc.Software + " " + cVersion + " ==="
+	bars := strings.Repeat("=", len(s))
+
+	return bars + "\n" + s + "\n" + bars
+}
+
+func (uc *updateChecker) isCurrentVersionNewer(currentVersion string, availableVersion string) bool {
+	if uc.Verbose {
+		fmt.Printf("Comparing current Version %s and available version %s\n", currentVersion, availableVersion)
+	}
+
+	vCurr, err := version.NewVersion(currentVersion)
+	vAvail, err := version.NewVersion(availableVersion)
+
+	if err != nil {
+		uc.processError(err)
+		return false
+	}
+
+	currNewer := vCurr.GreaterThan(vAvail)
+
+	if uc.Verbose {
+		if currNewer {
+			fmt.Printf("Current Version %s is newer than available version %s\n", vCurr, vAvail)
+		} else {
+			fmt.Printf("Available Version %s is equal or newer than current version %s\n", vAvail, vCurr)
+		}
+	}
+
+	return currNewer
 }
