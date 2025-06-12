@@ -29,10 +29,7 @@ https://github.com/Christian1984/go-update-checker
 
 ```go
 import (
-	// "fmt"
-
 	"fmt"
-	// updatechecker "github.com/Christian1984/go-update-checker"
 	updatechecker "github.com/amarillier/go-update-checker"
 )
 
@@ -78,10 +75,7 @@ https://github.com/amarillier/go-update-checker/releases
 
 ```go
 import (
-	// "fmt"
-
 	"fmt"
-	// updatechecker "github.com/Christian1984/go-update-checker"
 	updatechecker "github.com/amarillier/go-update-checker"
 )
 
@@ -115,10 +109,7 @@ https://github.com/amarillier/go-update-checker/releases
 
 ```go
 import (
-	// "fmt"
-
 	"fmt"
-	// updatechecker "github.com/Christian1984/go-update-checker"
 	updatechecker "github.com/amarillier/go-update-checker"
 )
 
